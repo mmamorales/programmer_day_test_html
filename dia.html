@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día del programador</title>
+</head>
+
+<body>
+    <h2 id="hoy"></h2>
+    <script>
+        function EsBisiesto(year) {
+            return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) ? true : false;
+        };
+
+        
+        let diaCompleto = new Date();
+        let hoy = document.getElementById("hoy").innerHTML = diaCompleto;
+        let anio = diaCompleto.getFullYear();
+        let mes  = diaCompleto.getMonth();
+        let dia = diaCompleto.getDate();
+        let anioBisiesto = false;
+
+        anioBisiesto = EsBisiesto(anio);
+
+        if (anioBisiesto && dia == 12 && mes == 8) {
+            document.write('<h1>Feliz día del programador!</h1>');
+        }
+        else if (anioBisiesto == false && dia == 13 && mes == 8) {
+            document.write('<h1>Feliz día del programador!</h1>');
+        } else {
+            document.write('<h1>Hoy no es el dia del programador</h1>');
+        };
+    </script>
+</body>
+
+</html>
